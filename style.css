@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background:  #0a0a23;
+  color: #333;
+ 
+  padding: 2rem;
+  overflow-x: hidden;
+}
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  background: transparent;
+}
+
+.profile-pic {
+  width: 60%;
+  height: auto;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+
+
+.profile-pic:hover {
+  transform: scale(1.15);
+  filter: brightness(1.1);
+}
+
+#gift {
+  width: 50%;
+  height: auto;
+  cursor: pointer;
+  transition: opacity 0.6s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gift:hover {
+  opacity: 0;
+}
+
+canvas#confetti-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+}
+
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -5;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150vh) scale(1.2); /* Go way above the screen */
+    opacity: 0;
+  }
+}
+
+.hearts-container img {
+  position: absolute;
+  bottom: -60px;
+  width: 30px;
+  height: 30px;
+  animation: floatUp var(--duration) ease-in infinite;
+  filter: hue-rotate(0deg) saturate(200%) brightness(1.2); /* Makes hearts redder */
+}
+
+.message-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+#typewriter {
+  font-size: 3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .1em solid #f0f0f5;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCaret {
+  50% { border-color: transparent; }
+}
+
+.hidden { display: none; }
+
+   #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0a0a23;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    #rakhi-text {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      white-space: nowrap;
+      color: white;
+      overflow: hidden;
+      border-right: .15em solid #666;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes caret {
+      50% { border-color: transparent; }
+    }
+    #rakhi-text.typing {
+      animation: typing 3s steps(28), caret .8s step-end infinite;
+    }
+    
+    @keyframes smokeUp {
+      0% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+      100% { opacity: 0; transform: translateY(-50px) scale(1.2); filter: blur(4px); }
+    }
+    #rakhi-text.smoke {
+      animation: smokeUp 1.5s ease-out forwards;
+    }
+    
+    #content {
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+    #content.visible {
+      opacity: 1;
+    }
+
+.about-rakhi {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(255, 243, 224, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.about-rakhi h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #b33f62;
+}
+
+.about-rakhi p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  font-family: "Sriracha", cursive;
+}

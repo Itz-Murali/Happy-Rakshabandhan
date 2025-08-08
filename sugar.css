@@ -1,0 +1,317 @@
+:root{
+    --color-pink: #feecea;
+    --color-white: #fff;
+    --color-black: #333;
+    --color-text-pink: #ff7882;
+    --color-heart: #F61F1F;
+    --color-bg-letter: #fff8e4;
+    --color-border: #DACCBF;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+#btn__letter{
+    position: relative;
+    margin-top: 30px;
+    background-color: var(--color-text-pink);
+    outline: none;
+    padding: 5px 15px;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: 3px solid var(--color-black);
+    font-family: "Sriracha", cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transform: scale(1);
+    transition: all .5s ease-in-out;
+}
+#btn__letter:active{
+    transform: scale(0.7);
+}
+#btn__letter i{
+    margin-left: 5px;
+}
+#btn__letter:hover{
+    border-color: var(--color-heart);
+    background-color: var(--color-heart);
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#btn__letter:hover i{
+    animation: rotateHeart 1s infinite linear;
+}
+@keyframes rotateHeart{
+    0%,50%, 100%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(12deg);
+    }
+    75%{
+        transform: rotate(-12deg);
+    }
+}
+
+
+.box__letter{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    font-family: serif;
+    display: none;
+}
+.box__letter .letter__border{
+    position: absolute;
+    width: 55vw;
+    height: 450px;
+    background-color: var(--color-white);
+    border-radius: 27px;
+    padding: 17px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+.letter__border .close{
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+}
+.letter__border .letter{
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-letter);
+    border-radius: 10px;
+    padding-top: 15px;
+}
+.letter__border .letter .title__letter{
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 2.4rem;
+}
+.title__letter .fa-solid{
+    margin-left: 5px;
+    font-size: 1.3rem;
+}
+.letter__border .letter .content__letter{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-top: 1.5rem;
+    padding-bottom: 70px;
+}
+.letter__border .letter .content__letter .left{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    padding: 1.7rem;
+    border-right: 3px solid var(--color-border);
+}
+.content__letter .left #heart__letter{
+    opacity: 0;
+    width: 100%;
+}
+#heart__letter.animationOp{
+    animation: opacityHeart 1s 1s forwards;
+}
+@keyframes opacityHeart{
+    to{
+        opacity: 1;
+    }
+}
+.content__letter .left .heart{
+    position: absolute;
+    opacity: 0;
+}
+.content__letter .left .heart.animation{
+    animation: scaleHeartLetter 1s var(--t) infinite ease-in-out;
+}
+@keyframes scaleHeartLetter{
+    0%{
+        opacity: 1;
+        transform: scale(0);
+    }
+    10%{
+        opacity: 1;
+        transform: scale(1.3);
+    }
+    20%{
+        opacity: 1;
+        transform: scale(0.7);
+    }
+    30%,100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+}
+.content__letter .left .heart_1{
+    top: 90px;
+    left: 30px;
+}
+.content__letter .left .heart_2{
+    top: 20px;
+    right: 70px;
+}
+.content__letter .left .heart_3{
+    bottom: 50px;
+    left: 145px;
+}
+.content__letter .left .heart_4{
+    top: 140px;
+    right: 35px;
+}
+.content__letter .right{
+    position: relative;
+    width: 50%;
+    font-family: serif;
+}
+.content__letter .right .love__img{
+    opacity: 0;
+    position: absolute;
+    right: 20px;
+    top: -170px;
+}
+.love__img.animationOp{
+    animation: opacityHeart 1s 1s forwards;
+}
+.content__letter .right .text__letter{
+    margin-top: 60px;
+    padding: 20px 15px 10px 15px;
+    font-family: serif;
+    font-size: 1.3rem;
+    font-family: serif;
+}
+.content__letter .right #mewmew{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+}
+#mewmew.animationOp{
+    animation: opacityHeart 1s 1s forwards;
+}
+
+
+
+@media screen and (max-width: 658px)   {
+
+    
+    #btn__letter {
+        position: relative;
+        margin-top: 17px;
+        width: 209px;
+        background-color: var(--color-text-pink);
+        outline: none;
+        padding: 6px 4px;
+        font-size: 1rem;
+        border-radius: 50px;
+        border: 3px solid var(--color-black);
+        font-family: "Sriracha", cursive;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 2;
+        /* transform: scale(1); */
+        transition: all .5s ease-in-out;
+    }
+
+ 
+
+    .box__letter .letter__border {
+        position: absolute;
+        width: 90vw;
+        height: 400px;
+        background-color: var(--color-white);
+        border-radius: 27px;
+        padding: 17px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: none;
+    }
+
+    .letter__border .letter {
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-bg-letter);
+        border-radius: 10px;
+        padding-top: 15px;
+    }
+
+    .letter__border .letter .title__letter {
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+        font-weight: bold;
+        font-size: 1.4rem;
+    }
+
+    .letter__border .letter .content__letter {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        padding-top: .7rem;
+        padding-bottom: 70px;
+    }
+
+    .content__letter .right .text__letter {
+        margin-top: -14px;
+        padding: 20px 15px 10px 15px;
+     font-family: "Sriracha", cursive; 
+        font-size: .8rem;
+        line-height: 1.4;
+    }
+
+    .content__letter .right .love__img {
+        opacity: 0;
+        position: absolute;
+        right: 126px;
+        top: 90%;
+        right: 100%;
+    }
+
+    .love__img img {
+ 
+            width: 84px;
+
+    }
+
+    .content .right .image {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        border: 6px solid var(--color-black);
+    }
+
+  
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy Rakshabandhan</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="sugar.css">
+ <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Titan+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Sriracha&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <div id="overlay">
+    <h1 id="rakhi-text"></h1>
+  </div>
+
+  
+  <div id="content">
+  <canvas id="confetti-canvas"></canvas>
+  <main>
+    
+    <div class="hearts-container"></div>
+    
+    
+    
+<div class="image-wrapper">
+  <img src="img/main.png" alt="Image" class="profile-pic"/>
+</div>
+
+  
+
+
+<div class="about-rakhi">
+  <h2>About Rakshabandhan</h2>
+  <p>
+    Rakshabandhan, also known as Rakhi, is a sacred Hindu festival celebrating 
+    the bond between brothers and sisters. On this day, sisters tie a colorful 
+    rakhi (sacred thread) around their brothers’ wrists, praying for their well-being, 
+    while brothers vow to protect and support their sisters throughout life.
+  </p>
+</div>
+
+
+<div class="btn" id="btn">
+  <img id="gift" src="img/gift.png" alt="Gift" />
+</div>
+
+
+<div class="box__letter">
+  <div class="letter__border">
+    <div class="letter">
+      <div class="title__letter"></div>
+      <div class="content__letter">
+        <div class="left">
+          <img id="heart__letter" src="https://media.giphy.com/media/YKUvclrGYmDKXwtphf/giphy.gif" alt="">
+         
+          <img class="heart heart_1" style="--t: 0.2s" width="20" src="./images/heart.png" alt="">
+          <img class="heart heart_2" style="--t: 0.4s" width="20" src="./images/heart.png" alt="">
+          <img class="heart heart_3" style="--t: 0.6s" width="20" src="./images/heart.png" alt="">
+          
+        
+          <img class="heart heart_4" style="--t: 0.8s" width="20" src="img/heart.png" alt="">
+        </div>
+        <div class="right">
+          <div class="love__img">
+            <img src="https://media.giphy.com/media/m85llaN7ZkFIHtURiC/giphy.gif" alt="" width="220">
+          </div>
+          <div class="text__letter">
+            <p></p>
+          </div>
+          <img id="mewmew" width="80" src="img/mewmew.gif" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="close">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  </div>
+</div>
+
+
+
+    
+    
+    
+    
+  </main>
+  </div>
+<script>
+  
+const datatxtletter = "Happy Rakshabandhan! Some bonds are not tied by blood, but by moments, care, and quiet understanding. You’ve always been a calm presence — someone who never needed to speak much, yet made things feel better just by being there. On this special day, I just want to thank you for being part of this journey. May your life always be filled with peace, love, and silent strength. No matter where life takes us, this thread of connection will always stay.";
+  const titleLetter    = "For You";
+
+  
+  const charArrLetter = datatxtletter.split('');
+  const charArrTitle  = titleLetter.split('');
+  let idxLetter = 0, idxTitle = 0, intervalTitle, intervalLetter;
+
+  
+  $("#btn").on("click", function(){
+    $(".box__letter").slideDown();
+    setTimeout(() => $(".letter__border").slideDown(), 1000);
+
+    
+    
+    setTimeout(() => {
+  intervalTitle = setInterval(() => {
+    if (idxTitle < charArrTitle.length) {
+      const span = charArrTitle[idxTitle++];
+      $(".title__letter").append(span);
+    } else {
+      clearInterval(intervalTitle);
+    }
+  }, 100);
+}, 2000);
+
+    
+    setTimeout(() => {
+      $("#heart__letter, .love__img, #mewmew").addClass("animationOp");
+    }, 2800);
+    setTimeout(() => {
+      $(".heart").addClass("animation");
+    }, 3500);
+
+    
+    setTimeout(() => {
+      intervalLetter = setInterval(() => {
+        if (idxLetter < charArrLetter.length) {
+          $(".text__letter p").append( charArrLetter[idxLetter++] );
+        } else {
+          clearInterval(intervalLetter);
+        }
+      }, 50);
+    }, 6000);
+  });
+
+  
+  $(".close").on("click", function(){
+    clearInterval(intervalTitle);
+    clearInterval(intervalLetter);
+    $(".title__letter, .text__letter p").empty();
+    $(".box__letter, .letter__border").slideUp();
+    $("#heart__letter, .love__img, #mewmew").removeClass("animationOp");
+    $(".heart").removeClass("animation");
+    idxLetter = idxTitle = 0;
+  });
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
