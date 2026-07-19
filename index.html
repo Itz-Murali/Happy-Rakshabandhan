@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Raksha Bandhan · A Celebration of the Sacred Bond</title>
+  <meta name="description" content="An ultra-premium, festive Raksha Bandhan experience celebrating the timeless bond between brothers and sisters — with a heartfelt letter, blessings, and immersive celebration." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="overlay">
+    <div class="intro-inner">
+      <div class="intro-rakhi">
+        <img src="img/rakhi.png" alt="Rakhi" />
+      </div>
+      <h1 id="rakhi-text"></h1>
+      <p class="intro-sub">Tying hearts together, one thread at a time</p>
+      <div class="intro-loader"><span></span></div>
+    </div>
+  </div>
+
+  <div id="content">
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="particles" aria-hidden="true"></div>
+
+    <img class="corner corner-tl" src="img/mandala.png" alt="" aria-hidden="true" />
+    <img class="corner corner-br" src="img/mandala.png" alt="" aria-hidden="true" />
+
+    <main>
+      <section class="hero reveal" id="home">
+        <div class="hero-glow"></div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow"><i data-lucide="sparkles"></i> Raksha Bandhan · <span id="year"></span></span>
+            <h1 class="hero-title">
+              <span class="script">Happy</span>
+              <span class="display">Raksha Bandhan</span>
+            </h1>
+            <p class="hero-lead">
+              A sacred thread. An unbreakable promise. A bond woven with
+              love, laughter, and a lifetime of memories.
+            </p>
+          </div>
+
+          <div class="hero-visual">
+            <div class="visual-ring"></div>
+            <div class="visual-card glass">
+              <img src="img/main.png" alt="A sister tying a rakhi on her brother's wrist" class="profile-pic" />
+            </div>
+            <img class="float-rakhi" src="img/rakhi.png" alt="Decorative rakhi" />
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn-primary" id="btn">
+            <i data-lucide="gift"></i>
+            <span>Open Your Letter</span>
+          </button>
+          <a class="btn-ghost" href="#about">
+            <i data-lucide="arrow-down"></i>
+            <span>Explore</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="about reveal" id="about">
+        <div class="section-head">
+          <span class="kicker">The Festival</span>
+          <h2>About Raksha Bandhan</h2>
+          <div class="divider"><span></span><i data-lucide="flower-2"></i><span></span></div>
+        </div>
+        <div class="about-card glass">
+          <p>
+            Raksha Bandhan, also known as <strong>Rakhi</strong>, is a sacred Hindu
+            festival celebrating the timeless bond between brothers and sisters.
+            On this day, sisters tie a colorful <em>rakhi</em> — a thread of
+            protection — around their brothers' wrists, praying for their
+            well-being, while brothers vow to protect and cherish their sisters
+            through every season of life.
+          </p>
+        </div>
+      </section>
+
+      <section class="rituals reveal" id="rituals">
+        <div class="section-head">
+          <span class="kicker">Traditions</span>
+          <h2>The Sacred Rituals</h2>
+          <div class="divider"><span></span><i data-lucide="flower-2"></i><span></span></div>
+        </div>
+        <div class="ritual-grid">
+          <article class="ritual glass">
+            <div class="ritual-icon"><i data-lucide="hand-heart"></i></div>
+            <h3>The Thread</h3>
+            <p>The rakhi is tied with love — a symbol of protection, prayer and an unspoken vow.</p>
+          </article>
+          <article class="ritual glass">
+            <div class="ritual-icon"><i data-lucide="flame"></i></div>
+            <h3>The Aarti</h3>
+            <p>A glowing diya circles the wrist, blessing the bond with light and good fortune.</p>
+          </article>
+          <article class="ritual glass">
+            <div class="ritual-icon"><i data-lucide="candy"></i></div>
+            <h3>The Sweets</h3>
+            <p>Mouths are sweetened with mithai, sealing the moment with joy and warmth.</p>
+          </article>
+          <article class="ritual glass">
+            <div class="ritual-icon"><i data-lucide="gift"></i></div>
+            <h3>The Gift</h3>
+            <p>Brothers offer a token of love — a promise to always stand by their sister's side.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="wish reveal" id="wish">
+        <div class="wish-inner glass">
+          <i data-lucide="quote" class="quote-mark"></i>
+          <p class="wish-text">
+            Some bonds are not tied by blood, but by moments, care, and quiet
+            understanding — and this thread will keep us close, always.
+          </p>
+          <span class="wish-by">— With love, on Raksha Bandhan</span>
+        </div>
+      </section>
+
+      <div class="box__letter">
+        <div class="letter__border">
+          <div class="letter">
+            <div class="title__letter"></div>
+            <div class="content__letter">
+              <div class="left">
+                <img id="heart__letter" src="https://media.giphy.com/media/YKUvclrGYmDKXwtphf/giphy.gif" alt="" />
+                <img class="heart heart_1" style="--t: 0.2s" width="20" src="img/heart.png" alt="" />
+                <img class="heart heart_2" style="--t: 0.4s" width="20" src="img/heart.png" alt="" />
+                <img class="heart heart_3" style="--t: 0.6s" width="20" src="img/heart.png" alt="" />
+                <img class="heart heart_4" style="--t: 0.8s" width="20" src="img/heart.png" alt="" />
+              </div>
+              <div class="right">
+                <div class="love__img">
+                  <img src="https://media.giphy.com/media/m85llaN7ZkFIHtURiC/giphy.gif" alt="" width="200" />
+                </div>
+                <div class="text__letter"><p></p></div>
+                <img id="mewmew" width="72" src="img/mewmew.gif" alt="" />
+              </div>
+            </div>
+          </div>
+          <button class="close" aria-label="Close letter">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer reveal">
+      <div class="footer-rakhi"><img src="img/rakhi.png" alt="" /></div>
+      <p class="footer-wish">May this thread of love bind your hearts forever.</p>
+      <p class="footer-sig">Happy Raksha Bandhan <i data-lucide="heart"></i></p>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
