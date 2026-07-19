@@ -17,6 +17,7 @@ A minimal and heartfelt website to celebrate the beautiful bond of **Rakshabandh
 Made with simplicity and love by:
 
 - **Murali**
+- **Anya**
 
 ---
 
